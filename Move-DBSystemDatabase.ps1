@@ -1,6 +1,6 @@
 $DebugPreference = "SilentlyContinue"
 
-function Move-DbaDBSystemDatabase {
+function Move-DBSystemDatabase {
         <#
     .SYNOPSIS
         Semi Automated Function to Move System database files to a new location - takes sql offline.
@@ -14,7 +14,7 @@ function Move-DbaDBSystemDatabase {
     .PARAMETER Destination
         The destination file path
     .PARAMETER Credential
-        PSCredential objecy otherwise the curreny user will be used.
+        PSCredential object, otherwise the current user will be used.
 
     .NOTES
        
@@ -26,14 +26,14 @@ function Move-DbaDBSystemDatabase {
         Usually this will not occur when the FQN is used.
 
     .EXAMPLE
-        PS C:\> Move-DbaDBSystemDatabase -SqlInstance SQLSERVER001.domain.com -Destination D:\SQLSystem -WhatIf
+        PS C:\> Move-DBSystemDatabase -SqlInstance SQLSERVER001.domain.com -Destination D:\SQLSystem -WhatIf
 
-        PS C:\> Move-DbaDBSystemDatabase -SqlInstance SQLSERVER001.domain.com -Destination "C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA" 
+        PS C:\> Move-DBSystemDatabase -SqlInstance SQLSERVER001.domain.com -Destination "C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA" 
 
         Will return an object containing all file groups and their contained files for every database on the sql2016 SQL Server instance
     .EXAMPLE
         $Credential = Get-Credential -UserName DOMAIN\User1 -Message  "Please enter your password:"
-        Move-DbaDBSystemDatabase -SqlInstance SQLSERVER001.domain.com -Destination D:\SQLSystem -Credential $Credential
+        Move-DBSystemDatabase -SqlInstance SQLSERVER001.domain.com -Destination D:\SQLSystem -Credential $Credential
     #>
     [CmdletBinding(SupportsShouldProcess=$true,ConfirmImpact='High')]
     param (
@@ -152,7 +152,6 @@ function Move-DbaDBSystemDatabase {
         if ($PSCmdlet.ShouldProcess($SqlInstance,"Stop SQL Server")){
             Write-Host "Stopping"
             Invoke-Command -ComputerName $ComputerNetworkName.FQDN -ScriptBlock {Stop-Service -Name $Using:SqlInstance.InstanceName -Force} -Credential $Credential
-            #Get-DbaService -SqlInstance $SqlInstance | Stop-DbaService
         }
     }
     catch {
