@@ -2,9 +2,9 @@
     
 ### Move-DBSystemDatabase
 
-Move System database files to a new location.  Attempls to automate the process found [here](https://learn.microsoft.com/en-us/sql/relational-databases/databases/move-system-databases?view=sql-server-ver16).
+Move System database files to a new location.  Attempts to automate the process found [here](https://learn.microsoft.com/en-us/sql/relational-databases/databases/move-system-databases?view=sql-server-ver16).
 
-**WARNING** SQL Must be restarted during the process. Semi Automated Function!! Some prompted manual steps to configure the master database are necessary see Microsft Help on moving SQL system databases.
+**WARNING** SQL Must be restarted during the process. Semi Automated Function!! Some prompted manual steps to configure the master database are necessary see Microsoft Help on moving SQL system databases.
 
 - **Notes**
 
@@ -16,7 +16,7 @@ Move System database files to a new location.  Attempls to automate the process 
 
         `WinRM cannot process the request. The following error occurred while using Kerberos authentication: Cannot find the computer. `
 
-- **Prerequisits**
+- **Prerequisites**
     -  [DBATOOLS](https://dbatools.io/download/) module.
 
 
