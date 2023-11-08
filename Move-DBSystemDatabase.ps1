@@ -4,7 +4,6 @@ function Move-DBSystemDatabase {
         <#
     .SYNOPSIS
         Semi Automated Function to Move System database files to a new location - takes sql offline.
-        ALways use the FQN of the server across domains.  
         WARNING!!! Some manual steps to configure the master database are necessary see Microsft Help on moving SQL system databases
 
     .DESCRIPTION

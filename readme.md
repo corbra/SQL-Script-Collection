@@ -1,6 +1,6 @@
-## SQL Script Collection 
+# SQL Script Collection 
     
-### Move-DBSystemDatabase
+## <u>Move-DBSystemDatabase</u>
 
 Move System database files to a new location.  Attempts to automate the process found [here](https://learn.microsoft.com/en-us/sql/relational-databases/databases/move-system-databases?view=sql-server-ver16).
 
@@ -16,7 +16,17 @@ Move System database files to a new location.  Attempts to automate the process 
 
         `WinRM cannot process the request. The following error occurred while using Kerberos authentication: Cannot find the computer. `
 
-- **Prerequisites**
-    -  [DBATOOLS](https://dbatools.io/download/) module.
 
 
+## <u>Get-SQLEngineServiceAccounts</u>
+
+Retrieve the SQL Server Engine service account.  The AD object used for SQL to access resources is returned.  See [here](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/configure-windows-service-accounts-and-permissions?view=sql-server-ver16).
+
+## <u>New-SQLShare</u>
+
+Create a local SMB share and setup access for SQL.  This is useful for taking remote backups.  
+
+
+## <u>Prerequisites</u>
+
+[DBATOOLS](https://dbatools.io/download/) module.
